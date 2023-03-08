@@ -8,7 +8,7 @@ Then, enter this batch of commands from a WSL session
 ```
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
-git clone --bare "https://github.com/klang/dotfiles.git" $HOME/.cfg
+git clone --bare "https://github.com/AuriferousAurora/dotfiles.git" $HOME/.cfg
 dotfiles config --local status.showUntrackedFiles no
 dotfiles checkout -f main
 dotfiles push --set-upstream origin main
