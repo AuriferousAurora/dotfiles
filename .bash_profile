@@ -1,7 +1,4 @@
 # .bash_profile
-# This prevents rendering issues when it the prompt is the first line in Windows Terminal
-echo "Loading bash profile"
-
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
         . ~/.bashrc
@@ -69,7 +66,7 @@ export KUBECONFIG=$HOME/.kube/config
 
 export SSLKEYLOGFILE=~/.ssl-key.log
 
-export GITHUB_TOKEN=$(~/.local/bin/github-token)
+export GITHUB_TOKEN=$(gh auth token)
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
@@ -80,3 +77,5 @@ update_clock () {
         sudo hwclock -s
         sudo ntpdate time.windows.com
 }
+
+eval $(ssh-agent) 1>/dev/null
