@@ -23,3 +23,9 @@ source ~/.bash_profile
 ~/.local/bin/init-repos
 
 ```
+
+To modify local code after a new fork, run the following command:
+
+```
+dotfiles pull
+```
