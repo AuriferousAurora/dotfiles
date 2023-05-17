@@ -66,11 +66,11 @@ export KUBECONFIG=$HOME/.kube/config
 
 export SSLKEYLOGFILE=~/.ssl-key.log
 
-export GITHUB_TOKEN=$(gh auth token)
-
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 export KUBERNETES_EXEC_INFO='{"apiVersion": "client.authentication.k8s.io/v1beta1"}'
+export NODE_OPTIONS="--max-old-space-size=8192"
+export ALI_GITHUB_PACKAGE_READER_TOKEN=$(echo "Z2hwXzNNVGxYc01WY0dvOTJaTGp0YzNJdzhtdDNUSUZuODRRcW5FVwo=" | base64 -d)
 
 update_clock () {
         echo '[ROOT] Updating clock (sudo hwclock --hctosys)'
