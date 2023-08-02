@@ -86,6 +86,10 @@ Pin: origin "packages.microsoft.com"
 Pin-Priority: 999
 EOF
 
+sudo tee /usr/lib/binfmt.d/WSLInterop.conf > /dev/null <<'EOF'
+:WSLInterop:M::MZ::/init:PF
+EOF
+
 
 echo ''
 echo -e "\e[1;36m------\e[0m"
@@ -236,6 +240,9 @@ then
 fi
 sudo curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
 
+# Initialize ssh-agent
+# https://unix.stackexchange.com/questions/339840/how-to-start-and-use-ssh-agent-as-systemd-service
+systemctl --user enable --now ssh-agent
 
 echo ''
 echo -e "\e[1;32m------\e[0m"
